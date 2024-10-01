@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Auction Module</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bank Auction Module</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#upload-inventory">Upload Inventory</a></li>
+            <li><a href="#live-auction">Live Auction</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="upload-inventory">
+            <h2>Upload Vehicle Inventory</h2>
+            <form id="uploadForm">
+                <label for="make">Make:</label>
+                <input type="text" id="make" name="make" required>
+                
+                <label for="model">Model:</label>
+                <input type="text" id="model" name="model" required>
+                
+                <label for="year">Year:</label>
+                <input type="number" id="year" name="year" required>
+                
+                <label for="condition">Condition:</label>
+                <input type="text" id="condition" name="condition" required>
+                
+                <label for="startDate">Auction Start Date:</label>
+                <input type="date" id="startDate" name="startDate" required>
+                
+                <label for="endDate">Auction End Date:</label>
+                <input type="date" id="endDate" name="endDate" required>
+                
+                <button type="submit">Upload</button>
+            </form>
+        </section>
+        <section id="live-auction">
+            <h2>Live Auction</h2>
+            <div id="auctionDashboard">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Vendor</th>
+                            <th>Vehicle</th>
+                            <th>LAN No.</th>
+                            <th>Bidder</th>
+                            <th>Current Bid</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CarTrade</td>
+                            <td>Maruti Suzuki, Brezza (2022)</td>
+                            <td>LAN129383773893</td>
+                            <td>Kamal Solanki</td>
+                            <td>₹15,5000.00</td>
+                            <td><button onclick="approveBid('bid1')">Approve</button></td>
+                        </tr>
+                        <tr>
+                            <td>Cars24</td>
+                            <td>Maruti Suzuki, Brezza (2022)</td>
+                            <td>LAN129383773893</td>
+                            <td>Abdul Qadeer</td>
+                            <td>₹15,3000.00</td>
+                            <td><button onclick="approveBid('bid1')">Approve</button></td>
+                        </tr>
+                        <tr>
+                            <td>AutoBazaar</td>
+                            <td>Maruti Suzuki, Brezza (2022)</td>
+                            <td>LAN129383773893</td>
+                            <td>Satnam Singh</td>
+                            <td>₹15,0000.00</td>
+                            <td><button onclick="approveBid('bid1')">Approve</button></td>
+                        </tr>
+                        <!-- More rows can be added dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+
+    <script>
+        function approveBid(bidId) {
+            // Function to handle bid approval
+            alert('Bid ' + bidId + ' approved!');
+        }
+
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Vehicle inventory uploaded!');
+            // Add logic to handle form submission and uploading data
+        });
+    </script>
+</body>
+</html>
